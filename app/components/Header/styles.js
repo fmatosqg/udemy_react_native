@@ -4,9 +4,11 @@ import colors from '../../config/colors';
 
 const width = Dimensions.get('window').width; // full width
 
+const isIos = Platform.OS === 'ios';
+
 export default StyleSheet.create({
   container: {
-    marginTop: (Platform.OS === 'ios') ? 20 : 0,
+    marginTop: isIos ? 20 : 0,
     backgroundColor: colors.headerBackground,
     width,
     justifyContent: 'center',
@@ -17,6 +19,7 @@ export default StyleSheet.create({
     color: colors.headerFontColor,
     fontSize: 26,
     padding: 10,
+    fontWeight: isIos ? 'normal' : 'bold',
   },
 
 });

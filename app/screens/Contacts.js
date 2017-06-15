@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList } from 'react-native';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 import ListItem from '../components/ListItem/index';
 import Header from '../components/Header/index';
@@ -10,25 +9,17 @@ import { contacts } from '../config/data';
 import colors from '../config/colors';
 
 const Contacts = () => {
-  const test = [{ test: 'test', a: 'aa', b: 'bb' }, { test: 'test', a: 'aa', b: 'bb' }];
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.background }}>
 
       <Header title="Contacts" />
-      <Icon
-        name="rocket"
-        size={35}
-        style={{ alignSelf: 'flex-end', margin: 30 }}
-        color="#9a9a9a"
-      />
       <FlatList
-        style={{ backgroundColor: '#ff000011', padding: 30 }}
+        style={{ padding: 0 }}
         data={contacts}
         renderItem={({ item }) => {
-          return (<View>
-            <Text>{item.name.first} {item.name.last}</Text>
-            <Text> {item.email}</Text>
-          </View>);
+          return (
+            <ListItem firstName={item.name.first} lastName={item.name.last} email={item.email} photo={item.picture.thumbnail}  onPress={() => this.handleRowPress(item)}/>
+          );
         }}
         keyExtractor={(item) => { return item.email; }}
       />
