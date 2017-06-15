@@ -6,22 +6,21 @@ import IconIon from 'react-native-vector-icons/Ionicons';
 
 import style, { ARROW_SIZE, ARROW_ASSET_NAME } from './styles';
 import colors from '../../config/colors';
+import { capitalizeFirstLetter } from '../../helpers/string';
 
 const ListItem = ({ firstName, lastName, email, photo, onPress }) => {
-  const avatar = {
-    uri: photo,
-  };
+  const fullName = `${capitalizeFirstLetter(firstName)} ${capitalizeFirstLetter(lastName)}`;
   return (
     <TouchableHighlight
       onPress={onPress}
-      underlayColor={colors.rowUnderlay}
+      underlayColor={colors.cardSelected}
     >
 
       <View style={style.container}>
 
-        <Image style={style.avatar} source={avatar} />
+        <Image style={style.avatar} source={{ uri: photo }} />
         <View style={style.subcontainer}>
-          <Text style={style.name}>{firstName} {lastName}</Text>
+          <Text style={style.name}>{fullName}</Text>
           <Text style={style.email}>{email}</Text>
         </View>
 

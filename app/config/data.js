@@ -41,8 +41,8 @@ export const contacts = [
     gender: 'female',
     name: {
       title: 'miss',
-      first: 'marina',
-      last: 'hauser',
+      first: 'diana ',
+      last: 'hauser hel',
     },
     location: {
       street: '6091 wiesenweg',

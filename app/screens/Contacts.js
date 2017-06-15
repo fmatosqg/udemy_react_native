@@ -9,6 +9,10 @@ import { contacts } from '../config/data';
 import colors from '../config/colors';
 
 const Contacts = () => {
+  handleRowPress = (item) => {
+    return null;
+  };
+
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.background }}>
 
@@ -18,7 +22,11 @@ const Contacts = () => {
         data={contacts}
         renderItem={({ item }) => {
           return (
-            <ListItem firstName={item.name.first} lastName={item.name.last} email={item.email} photo={item.picture.thumbnail}  onPress={() => this.handleRowPress(item)}/>
+            <ListItem
+              firstName={item.name.first} lastName={item.name.last}
+              email={item.email} photo={item.picture.thumbnail}
+              onPress={() => { return this.handleRowPress(item); }}
+            />
           );
         }}
         keyExtractor={(item) => { return item.email; }}
