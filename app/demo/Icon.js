@@ -1,13 +1,18 @@
-import React, { Component } from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { StackNavigator } from 'react-navigation';
 
-const myIcon = (<Icon>name ="rocket" size={30} color="#900</Icon>);
+import Contacts from '../screens/Contacts';
+import Me from '../screens/Me';
 
-<Icon
-    name="ios-arrow-forward"
-    size={35}
-    style={{ alignSelf: 'flex-end' }}
-    color="#9a9a9a"
-  />
+export const DemoStack = StackNavigator({
 
-export default myIcon;
+  FirstScreen: {
+    screen: Contacts,
+    navigationOptions: {
+      title: 'whatever',
+    },
+  },
+  SeconScreen: {
+    screen: Me,
+  },
+});
+
