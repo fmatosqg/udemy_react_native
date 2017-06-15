@@ -12,3 +12,9 @@
 <code>cd android ; ./gradlew assembleDebug </code>
 # Install
 * <code>yarn install</code>
+
+# Instructor code
+Instructor provides 2 github repos,
+* initial source code https://github.com/HandlebarLabs/your-first-react-native-app-starter
+* and complete source code https://github.com/HandlebarLabs/your-first-react-native-app-source
+

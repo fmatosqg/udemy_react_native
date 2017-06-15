@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList } from 'react-native';
 
-import ListItem from '../components/ListItem/index';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import ListItem from '../components/ListItem/index';
+import Header from '../components/Header/index';
 
 import { contacts } from '../config/data';
 import colors from '../config/colors';
@@ -12,7 +13,8 @@ const Contacts = () => {
   const test = [{ test: 'test', a: 'aa', b: 'bb' }, { test: 'test', a: 'aa', b: 'bb' }];
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Header</Text>
+
+      <Header title="Contacts" />
       <Icon
         name="rocket"
         size={35}
