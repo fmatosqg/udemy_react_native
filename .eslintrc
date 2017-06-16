@@ -9,6 +9,7 @@
     "arrow-body-style": ["error", "always"],
     "react/forbid-prop-types": [1, { "forbid": ["any", "array"] }],
     "import/no-unresolved": 0,
+    "import/noundef" : 0,
     "import/no-extraneous-dependencies": 0,
     "global-require": 0,
     "max-len": ["error", 200],
@@ -16,7 +17,9 @@
     "class-methods-use-this": 0,
     "import/extensions": 0,
     "no-underscore-dangle": 0,
+    "no-unused-vars": 1,
     "react/prop-types": 0,
     "no-param-reassign": 0,
+    "react/jsx-no-undef": 2
   }
 }
