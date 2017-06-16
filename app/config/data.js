@@ -43,7 +43,7 @@ export const contacts = [
     name: {
       title: 'ms',
       first: 'zoe',
-      last: 'bell',
+      last: 'bell hel',
     },
     location: {
       street: '3548 main road',

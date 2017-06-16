@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
-import { NavigationActions } from 'react-navigation';
+import { View, ScrollView } from 'react-native';
 
+
+import { DetailsHeader } from '../components/UserDetails';
+import colors from '../config/colors';
 
 const Details = (props) => {
-  updateName = () => {
-    props.navigation.setParams({
-      name: 'aaaaa',
-      title: 'bbbb',
-    });
-  };
+  const contact = props.navigation.state.params;
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-      <Button title="click" onPress={() => { this.updateName(); }} />
-
-    </View>);
+    <ScrollView style={{ backgroundColor: colors.background }}>
+      <DetailsHeader contact={contact} />
+    </ScrollView>);
 };
 
 export default Details;

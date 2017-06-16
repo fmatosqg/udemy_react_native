@@ -16,7 +16,6 @@ export default StyleSheet.create({
     padding: 0,
     margin: 5,
     flexDirection: 'row',
-
   },
   avatar: {
     width: 50,
@@ -50,4 +49,3 @@ export default StyleSheet.create({
   },
 
 });
-

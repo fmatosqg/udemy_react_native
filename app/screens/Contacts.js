@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Button, View, Text, FlatList } from 'react-native';
+import React from 'react';
+import { View, Text, FlatList } from 'react-native';
 
 
 import ListItem from '../components/ListItem/index';
@@ -9,10 +9,17 @@ import colors from '../config/colors';
 
 const Contacts = (props) => {
   const handleRowPress = (item) => {
-    console.log('Item is ', item.email);
     props.navigation.navigate('Details', item);
     return null;
   };
+
+  setTimeout(
+      () => {
+        const firstItem = contacts.shift();
+        props.navigation.navigate('Details', firstItem);
+      }
+      , 1000,
+  );
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.background }}>

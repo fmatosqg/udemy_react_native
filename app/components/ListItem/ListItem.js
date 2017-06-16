@@ -7,6 +7,7 @@ import IconIon from 'react-native-vector-icons/Ionicons';
 import style, { ARROW_SIZE, ARROW_ASSET_NAME } from './styles';
 import colors from '../../config/colors';
 import { capitalizeFirstLetter } from '../../helpers/string';
+import AssetIcon from '../AssetIcon/AssetIcon';
 
 const ListItem = ({ firstName, lastName, email, photo, onPress }) => {
   const fullName = `${capitalizeFirstLetter(firstName)} ${capitalizeFirstLetter(lastName)}`;
