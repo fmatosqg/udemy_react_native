@@ -1,15 +1,30 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text } from 'react-native';
+import { ScrollView } from 'react-native';
 
 
-import { DetailsHeader, Info,Actions } from '../components/UserDetails';
+import { DetailsHeader, Info, Actions } from '../components/UserDetails';
 import colors from '../config/colors';
 
 const Details = (props) => {
   const contact = props.navigation.state.params;
 
+  let _scrollToBottomY;
+
+  setTimeout(
+        () => {
+          this.scrollView.scrollToEnd();
+        }
+        , 1000,
+    );
+
   return (
-    <ScrollView style={{ backgroundColor: colors.background }}>
+    <ScrollView
+      ref={(ref) => { this.scrollView = ref; }}
+      style={{ backgroundColor: colors.background }}
+      onContentSizeChange={(contentWidth, contentHeight) => {
+        _scrollToBottomY = contentHeight;
+      }}
+    >
 
       <DetailsHeader contact={contact} />
       <Actions contact={contact} />

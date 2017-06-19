@@ -46,7 +46,6 @@ export default StyleSheet.create({
 
   cellRow: {
 
-
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -73,6 +72,12 @@ export default StyleSheet.create({
   },
   cellAsset: {
     padding: 5,
+  },
+
+
+  infoContainer: {
+    paddingVertical: 15,
+    paddingHorizontal: 20,
   },
 });
 
