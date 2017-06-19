@@ -58,8 +58,6 @@ export default StyleSheet.create({
   },
 
   cellLabel: {
-    // backgroundColor: '#ffff00',
-
     fontSize: 12,
     color: color.textSecondaryColor,
   },

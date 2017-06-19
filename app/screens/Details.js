@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, ScrollView, Text } from 'react-native';
 
 
-import { DetailsHeader } from '../components/UserDetails';
+import { DetailsHeader, Info,Actions } from '../components/UserDetails';
 import colors from '../config/colors';
 
 const Details = (props) => {
@@ -12,6 +12,8 @@ const Details = (props) => {
     <ScrollView style={{ backgroundColor: colors.background }}>
 
       <DetailsHeader contact={contact} />
+      <Actions contact={contact} />
+      <Info contact={contact} />
     </ScrollView>);
 };
 

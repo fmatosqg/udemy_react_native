@@ -1,8 +1,11 @@
 import DetailsHeader from './DetailsHeader';
-import Action from './Action';
+import Actions from './Actions';
+import Info from './Info';
+
 import styles from './styles';
 
 export {
     DetailsHeader,
-    Action,
+    Actions,
+    Info,
     styles };

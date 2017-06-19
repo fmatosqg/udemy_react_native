@@ -9,6 +9,9 @@ import styles from './styles';
 import colors from '../../config/colors';
 
 const Action = ({ actions, label, value }) => {
+  if (actions == undefined) {
+    actions = [];
+  }
   return (
     <View style={styles.cellContainer}>
       <View style={styles.cellRow}>
@@ -25,7 +28,8 @@ const Action = ({ actions, label, value }) => {
               </TouchableOpacity>
             );
           },
-          ) }
+              )
+          }
         </View>
       </View>
     </View>);
