@@ -6,37 +6,32 @@ import Contacts from '../screens/Contacts';
 import Details from '../screens/Details';
 import { capitalizeFirstLetter } from '../helpers/string';
 
-const isIos = Platform.OS === 'ios';
+
+const fixAndroidNavigationBar = (navigatorOptions) => {
+  if (Platform.OS !== 'ios') {
+    navigatorOptions.header = () => { return (null); };
+  }
+  return navigatorOptions;
+};
+
 
 const ContactsStack = StackNavigator({
   Contacts: {
     screen: Contacts,
 
     navigationOptions: () => {
-      if (isIos) {
-        return ({
-          title: 'Contacts',
-        });
-      }
-      return ({
-        header: null,
+      return (fixAndroidNavigationBar({
         title: 'Contacts',
-      });
+      }));
     },
   },
   Details: {
     screen: Details,
 
     navigationOptions: ({ navigation }) => {
-      if (isIos) {
-        return ({
-          title: `${capitalizeFirstLetter(navigation.state.params.name.first)}`,
-        });
-      }
-      return ({
-        header: null,
+      return (fixAndroidNavigationBar({
         title: `${capitalizeFirstLetter(navigation.state.params.name.first)}`,
-      });
+      }));
     },
   },
 });

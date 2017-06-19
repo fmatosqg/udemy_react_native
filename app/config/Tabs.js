@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { TabNavigator } from 'react-navigation';
-import ContactsStack from './ContactsStack';
+import ContactsStack from './ScreenStacks';
 
 import NewContact from '../screens/NewContact';
 
