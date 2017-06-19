@@ -1,14 +1,17 @@
-import React from 'react';
-import { View, Platform } from 'react-native';
+
+import { Platform } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 import Contacts from '../screens/Contacts';
 import Details from '../screens/Details';
 import { capitalizeFirstLetter } from '../helpers/string';
+import Me from '../screens/Me';
+import NewContact from '../screens/NewContact';
 
+const isIos = Platform.OS === 'ios';
 
 const fixAndroidNavigationBar = (navigatorOptions) => {
-  if (Platform.OS !== 'ios') {
+  if (!isIos) {
     navigatorOptions.header = () => { return (null); };
   }
   return navigatorOptions;
@@ -37,4 +40,27 @@ const ContactsStack = StackNavigator({
 });
 
 
-export default ContactsStack;
+const NewContactStack = StackNavigator({
+  One: {
+    screen: NewContact,
+    navigationOptions: ({ navigation }) => {
+      return (fixAndroidNavigationBar({
+        title: 'New Contact',
+      }));
+    },
+  },
+});
+
+const MeStack = StackNavigator({
+  One: {
+    screen: Me,
+    navigationOptions: ({ navigation }) => {
+      return (fixAndroidNavigationBar({
+        title: 'Me',
+      }));
+    },
+  },
+});
+
+
+export { ContactsStack, NewContactStack, MeStack };

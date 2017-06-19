@@ -1,9 +1,7 @@
 import React from 'react';
 
 import { TabNavigator } from 'react-navigation';
-import ContactsStack from './ScreenStacks';
-
-import NewContact from '../screens/NewContact';
+import { ContactsStack, NewContactStack, MeStack } from './ScreenStacks';
 
 
 import AssetIcon, { ASSET_NAME_CONTACTS, ASSET_NAME_NEW_CONTACTS, ASSET_NAME_ME } from '../components/AssetIcon/AssetIcon';
@@ -22,19 +20,18 @@ const Tabs = TabNavigator({
   },
 
   TabNew: {
-    screen: NewContact,
+    screen: NewContactStack,
 
     navigationOptions: {
       tabBarLabel: 'New Contact',
       tabBarIcon: ({ tintColor }) => {
         return <AssetIcon name={ASSET_NAME_NEW_CONTACTS} color={tintColor} />;
-      }
-          ,
+      },
     },
   },
 
   TabMe: {
-    screen: Me,
+    screen: MeStack,
     navigationOptions: {
       tabBarLabel: 'Me',
       tabBarIcon: ({ tintColor }) => {
