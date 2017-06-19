@@ -4,7 +4,7 @@ import Contacts from '../screens/Contacts';
 import Details from '../screens/Details';
 import { capitalizeFirstLetter } from '../helpers/string';
 
-export const ContactsStack = StackNavigator({
+const ContactsStack = StackNavigator({
   Contacts: {
     screen: Contacts,
     navigationOptions: {
@@ -20,3 +20,6 @@ export const ContactsStack = StackNavigator({
     },
   },
 });
+
+
+export default ContactsStack;

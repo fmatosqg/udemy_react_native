@@ -8,6 +8,10 @@ export const ASSET_NAME_MAIL = 'mail';
 export const ASSET_NAME_CALL = 'call';
 export const ASSET_NAME_SMS = 'text';
 
+export const ASSET_NAME_CONTACTS = 'mail'
+export const ASSET_NAME_NEW_CONTACTS = 'mail'
+export const ASSET_NAME_ME = 'mail'
+
 const ARROW_SIZE = 25;
 
 const AssetIcon = ({ style, name, color }) => {
