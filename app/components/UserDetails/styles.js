@@ -17,16 +17,13 @@ export default StyleSheet.create({
 
   container: {
 
-
-
-
   },
 
-    imageContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: 20,
-    },
+  imageContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 20,
+  },
 
   name: {
     fontSize: 16,
@@ -42,7 +39,7 @@ export default StyleSheet.create({
     borderBottomColor: color.border,
 
     paddingVertical: 15,
-    margin: 10,
+    margin: 3,
 
     backgroundColor: color.cardBackground,
   },
@@ -71,14 +68,13 @@ export default StyleSheet.create({
     fontSize: 16,
     color: color.textColor,
     marginBottom: 5,
-    // backgroundColor: '#0000ff',
   },
 
   cellAssets: {
-
+    flexDirection: 'row',
   },
   cellAsset: {
-    // backgroundColor: '#00ff00',
+    padding: 5,
   },
 });
 

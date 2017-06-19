@@ -10,22 +10,26 @@ export const ASSET_NAME_SMS = 'text';
 
 const ARROW_SIZE = 25;
 
-const AssetIcon = ({ name, color }) => {
+const AssetIcon = ({ style, name, color }) => {
   const assetString = (n) => {
-    console.log('name ', name);
     if (isIos) {
       return `ios-${n}`;
     }
     return `md-${n}`;
   };
 
-  return (
-    <IconIon
-      size={ARROW_SIZE}
-      name={assetString(name)}
-      color={color}
-    />
-  );
+  if (name) {
+    return (
+      <IconIon
+        style={[style]}
+        size={ARROW_SIZE}
+        name={assetString(name)}
+        color={color}
+      />
+
+    );
+  }
+  return (null);
 };
 
 export default AssetIcon;
