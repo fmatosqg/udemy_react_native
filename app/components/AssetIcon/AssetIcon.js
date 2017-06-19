@@ -8,9 +8,9 @@ export const ASSET_NAME_MAIL = 'mail';
 export const ASSET_NAME_CALL = 'call';
 export const ASSET_NAME_SMS = 'text';
 
-export const ASSET_NAME_CONTACTS = 'mail'
-export const ASSET_NAME_NEW_CONTACTS = 'mail'
-export const ASSET_NAME_ME = 'mail'
+export const ASSET_NAME_CONTACTS = 'list';
+export const ASSET_NAME_NEW_CONTACTS = 'add';
+export const ASSET_NAME_ME = 'contact';
 
 const ARROW_SIZE = 25;
 
