@@ -6,7 +6,7 @@ import DetailsHeader from '../components/UserDetails/DetailsHeader';
 import Info from '../components/UserDetails/Info';
 import Actions from '../components/UserDetails/Actions';
 import colors from '../config/colors';
-import PrimaryButton from '../components/Buttons/PrimaryButton';
+import PrimaryButton from '../components/Buttons';
 
 const Me = () => {
   return (

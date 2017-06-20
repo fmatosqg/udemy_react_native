@@ -57,7 +57,7 @@ const ContactsStack = StackNavigator({
 
 
 const NewContactStack = StackNavigator({
-  One: {
+  NewContacts: {
     screen: NewContact,
     navigationOptions: ({ navigation }) => {
       return (buildNavigatorOptions(navigation, true, {
@@ -68,7 +68,7 @@ const NewContactStack = StackNavigator({
 });
 
 const MeStack = StackNavigator({
-  One: {
+  Me: {
     screen: Me,
     navigationOptions: ({ navigation }) => {
       return (buildNavigatorOptions(navigation, true, {

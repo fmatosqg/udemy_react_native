@@ -18,7 +18,8 @@ const Contacts = (props) => {
         const firstItem = contacts.shift();
         // props.navigation.
         // props.navigation.navigate('Details', firstItem);
-        props.navigation.navigate('DrawerOpen');
+        // props.navigation.navigate('DrawerOpen');
+        props.navigation.navigate('NewContacts');
       }
       , 1000,
   );
