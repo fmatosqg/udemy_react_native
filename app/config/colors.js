@@ -14,5 +14,6 @@ export default {
 
   link: '#007aff',
 
+  primaryButtonTextColor: '#eeeeff',
 };
 

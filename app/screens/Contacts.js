@@ -16,7 +16,9 @@ const Contacts = (props) => {
   setTimeout(
       () => {
         const firstItem = contacts.shift();
-        props.navigation.navigate('Details', firstItem);
+        // props.navigation.
+        // props.navigation.navigate('Details', firstItem);
+        props.navigation.navigate('DrawerOpen');
       }
       , 1000,
   );
