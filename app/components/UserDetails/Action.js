@@ -10,7 +10,7 @@ import styles from './styles';
 import colors from '../../config/colors';
 
 const Action = ({ actions, label, value }) => {
-  if (actions == undefined) {
+  if (actions === undefined) {
     actions = [];
   }
   return (

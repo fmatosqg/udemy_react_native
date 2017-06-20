@@ -22,5 +22,11 @@ export default StyleSheet.create({
     fontWeight: isIos ? 'normal' : 'bold',
   },
 
+
+    // /////////
+  drawerButtonContainer: {
+    marginLeft: 20,
+  },
+
 });
 

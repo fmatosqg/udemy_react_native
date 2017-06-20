@@ -1,3 +1,4 @@
 import Header from './Header';
+import DrawerButton from './DrawerButton';
 
-export default Header;
+export { Header, DrawerButton };

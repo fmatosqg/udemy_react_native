@@ -1,5 +1,11 @@
-
-import { Platform } from 'react-native';
+/**
+ * Overrides header when Android, so it won't show the navigation bar
+ * under the tab navigator (current react-navigator bug)
+ * @param navigatorOptions
+ * @returns {*}
+ */
+import React from 'react';
+import { Platform, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 import Contacts from '../screens/Contacts';
@@ -7,30 +13,33 @@ import Details from '../screens/Details';
 import { capitalizeFirstLetter } from '../helpers/string';
 import Me from '../screens/Me';
 import NewContact from '../screens/NewContact';
+import { DrawerButton } from '../components/Header/index';
 
 const isIos = Platform.OS === 'ios';
 
 const isAndroidUseNavigatorBar = true;
-/**
- * Overrides header when Android, so it won't show the navigation bar
- * under the tab navigator (current react-navigator bug)
- * @param navigatorOptions
- * @returns {*}
- */
-const fixAndroidNavigationBar = (navigatorOptions) => {
+const buildNavigatorOptions = (navigation, isStackTop, navOptions) => {
   if (!isAndroidUseNavigatorBar && !isIos) {
-    navigatorOptions.header = () => { return (null); };
+    navOptions.header = () => { return (null); };
   }
-  return navigatorOptions;
-};
 
+  if (isStackTop !== undefined && isStackTop) {
+    navOptions.headerLeft = (<DrawerButton
+      onPress={() => {
+        return navigation.navigate('DrawerOpen');
+      }}
+    />);
+  }
+
+  return navOptions;
+};
 
 const ContactsStack = StackNavigator({
   Contacts: {
     screen: Contacts,
 
-    navigationOptions: () => {
-      return (fixAndroidNavigationBar({
+    navigationOptions: ({ navigation }) => {
+      return (buildNavigatorOptions(navigation, true, {
         title: 'Contacts',
       }));
     },
@@ -39,7 +48,7 @@ const ContactsStack = StackNavigator({
     screen: Details,
 
     navigationOptions: ({ navigation }) => {
-      return (fixAndroidNavigationBar({
+      return (buildNavigatorOptions(navigation, false, {
         title: `${capitalizeFirstLetter(navigation.state.params.name.first)}`,
       }));
     },
@@ -51,7 +60,7 @@ const NewContactStack = StackNavigator({
   One: {
     screen: NewContact,
     navigationOptions: ({ navigation }) => {
-      return (fixAndroidNavigationBar({
+      return (buildNavigatorOptions(navigation, true, {
         title: 'New Contact',
       }));
     },
@@ -62,11 +71,12 @@ const MeStack = StackNavigator({
   One: {
     screen: Me,
     navigationOptions: ({ navigation }) => {
-      return (fixAndroidNavigationBar({
+      return (buildNavigatorOptions(navigation, true, {
         title: 'Me',
       }));
     },
   },
+
 });
 
 
