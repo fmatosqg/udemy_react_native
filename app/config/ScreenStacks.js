@@ -10,8 +10,15 @@ import NewContact from '../screens/NewContact';
 
 const isIos = Platform.OS === 'ios';
 
+const isAndroidUseNavigatorBar = true;
+/**
+ * Overrides header when Android, so it won't show the navigation bar
+ * under the tab navigator (current react-navigator bug)
+ * @param navigatorOptions
+ * @returns {*}
+ */
 const fixAndroidNavigationBar = (navigatorOptions) => {
-  if (!isIos) {
+  if (!isAndroidUseNavigatorBar && !isIos) {
     navigatorOptions.header = () => { return (null); };
   }
   return navigatorOptions;

@@ -5,7 +5,6 @@ import { ContactsStack, NewContactStack, MeStack } from './ScreenStacks';
 
 
 import AssetIcon, { ASSET_NAME_CONTACTS, ASSET_NAME_NEW_CONTACTS, ASSET_NAME_ME } from '../components/AssetIcon/AssetIcon';
-import Me from '../screens/Me';
 
 
 const Tabs = TabNavigator({
