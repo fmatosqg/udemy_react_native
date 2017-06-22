@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, TextInput } from 'react-native';
-import PrimaryTextInput from '../components/TextInput';
-import PrimaryButton from '../components/Buttons/PrimaryButton';
+import { PrimaryTextInput } from '../components/TextInput';
+import { PrimaryButton } from '../components/Buttons';
 
 const fields = [
     { placeholder: 'First name', stateKey: 'firstName' },

@@ -1,5 +1,5 @@
 import PrimaryTextInput from './PrimaryTextInput';
+import styles from './styles';
 
-export default
-  PrimaryTextInput
+export { PrimaryTextInput, styles }
 ;
