@@ -27,13 +27,6 @@ const styles = StyleSheet.create({
 });
 
 
-const onChangeText = (text, stateKey) => {
-  console.log('text is ', text);
-  const mod = {};
-  mod[stateKey] = text;
-  // this.setState(mod);
-};
-
 class NewContact extends Component {
 
   constructor(props) {
@@ -42,13 +35,25 @@ class NewContact extends Component {
     this.state = {};
   }
 
-  handleSubmit() {
-    alert('Submit');
+  onChangeText = (text, stateKey) => {
+    console.log('text is ', text);
+    const mod = {};
+    mod[stateKey] = text;
+    this.setState(mod);
+  };
+
+
+  handleSubmit(index, override = false) {
+    if (index === fields.length - 1 || override) {
+      alert('Submit');
+    } else {
+      const nextField = fields[index + 1];
+      this[nextField.stateKey].focus();
+    }
   }
 
   render() {
     return (
-
 
       <KeyboardAwareScrollView>
         {
@@ -57,18 +62,20 @@ class NewContact extends Component {
                  <PrimaryTextInput
                    placeholder={field.placeholder}
                    key={field.stateKey}
-                   onChangeText={onChangeText}
+                   onChangeText={(text) => { return this.onChangeText(text, field.stateKey); }}
                    {...field}
+                   returnKeyType={index === fields.length - 1 ? 'done' : 'next'}
+                   onSubmitEditing={() => { return this.handleSubmit(index); }}
+                   ref={(input) => { return (this[field.stateKey] = input); }}
                  />);
              })
 
           }
 
-
         <View style={styles.submitContainer}>
           <PrimaryButton
             title="Save"
-            onPress={() => { return this.handleSubmit(); }}
+            onPress={() => { return this.handleSubmit(0, true); }}
           />
         </View>
       </KeyboardAwareScrollView>

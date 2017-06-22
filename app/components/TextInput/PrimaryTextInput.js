@@ -1,27 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { TextInput, View } from 'react-native';
 
 import colors from '../../config/colors';
 import styles from './styles';
 
-const PrimaryTextInput = (props, { placeholder, onChangeText }) => {
-  return (
-    <View style={styles.container}>
-      <TextInput
+class PrimaryTextInput extends Component {
 
-        style={styles.input}
-        placeholder={placeholder}
-        onChangeText={onChangeText}
-        // autoCorrect={false}
-        autoCapitalize="none"
-        keyboardAppearance="dark"
-        returnKeyType="next"
-        underlineColorAndroid={colors.textInputUnderlineColor}
-        {...props}
-      />
-    </View>
-  );
-};
+  focus = () => {
+    this._input.focus();
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <TextInput
+          style={styles.input}
+          autoCorrect={false}
+          autoCapitalize="none"
+          underlineColorAndroid={colors.textInputUnderlineColor}
+          {...this.props}
+          ref={(input) => { return (this._input = input); }}
+        />
+      </View>
+    );
+  }
+}
 
 
 export default PrimaryTextInput;
