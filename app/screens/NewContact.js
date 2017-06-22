@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, TextInput } from 'react-native';
+import { View, Text, ScrollView, TextInput, StyleSheet } from 'react-native';
+
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+
 import { PrimaryTextInput } from '../components/TextInput';
 import { PrimaryButton } from '../components/Buttons';
+
 
 const fields = [
     { placeholder: 'First name', stateKey: 'firstName' },
@@ -13,9 +17,15 @@ const fields = [
     { placeholder: 'Birthday', stateKey: 'birthday' },
     { placeholder: 'Registered', stateKey: 'registered' },
     { placeholder: 'Username', stateKey: 'username' },
-
-
 ];
+
+
+const styles = StyleSheet.create({
+  submitContainer: {
+    marginTop: 20,
+  },
+});
+
 
 const onChangeText = (text, stateKey) => {
   console.log('text is ', text);
@@ -32,10 +42,15 @@ class NewContact extends Component {
     this.state = {};
   }
 
+  handleSubmit() {
+    alert('Submit');
+  }
+
   render() {
     return (
-      <ScrollView >
 
+
+      <KeyboardAwareScrollView>
         {
              fields.map((field, index) => {
                return (
@@ -48,14 +63,18 @@ class NewContact extends Component {
              })
 
           }
-        <View>
+
+
+        <View style={styles.submitContainer}>
           <PrimaryButton
-            title="Submit"
+            title="Save"
+            onPress={() => { return this.handleSubmit(); }}
           />
         </View>
-      </ScrollView>
+      </KeyboardAwareScrollView>
     );
   }
+
 }
 
 export default NewContact;
