@@ -20,5 +20,7 @@ export default StyleSheet.create({
   input: {
     height: 40,
     width: window.width,
+    fontSize: 14,
+    color: colors.textInputUnderlineColor,
   },
 });

@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, TextInput } from 'react-native';
 import PrimaryTextInput from '../components/TextInput';
+import PrimaryButton from '../components/Buttons/PrimaryButton';
 
 const fields = [
     { placeholder: 'First name', stateKey: 'firstName' },
     { placeholder: 'Last name', stateKey: 'lastName' },
+    { placeholder: 'Email', stateKey: 'email', keyboardType: 'email-address' },
+    { placeholder: 'Mobile Phone', stateKey: 'mobilePhone', keyboardType: 'phone-pad' },
+    { placeholder: 'Home Phone', stateKey: 'homePhone', keyboardType: 'phone-pad' },
+    { placeholder: 'City', stateKey: 'city' },
+    { placeholder: 'Birthday', stateKey: 'birthday' },
+    { placeholder: 'Registered', stateKey: 'registered' },
+    { placeholder: 'Username', stateKey: 'username' },
+
 
 ];
 
@@ -23,7 +32,6 @@ class NewContact extends Component {
     this.state = {};
   }
 
-
   render() {
     return (
       <ScrollView >
@@ -35,12 +43,16 @@ class NewContact extends Component {
                    placeholder={field.placeholder}
                    key={field.stateKey}
                    onChangeText={onChangeText}
+                   {...field}
                  />);
              })
 
           }
-
-
+        <View>
+          <PrimaryButton
+            title="Submit"
+          />
+        </View>
       </ScrollView>
     );
   }

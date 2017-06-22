@@ -1,3 +1,6 @@
+
+const blueUltramarine = '#111144';
+
 export default {
   background: '#efefff',
 
@@ -9,11 +12,13 @@ export default {
 
   border: '#cccccc',
 
-  textColor: '#111144',
+  textColor: blueUltramarine,
   textSecondaryColor: '#444488',
 
   link: '#007aff',
 
   primaryButtonTextColor: '#eeeeff',
+
+  textInputUnderlineColor: blueUltramarine,
 };
 
